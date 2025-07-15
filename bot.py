@@ -3,8 +3,8 @@ from telegram.ext import ApplicationBuilder
 from handlers.private import setup_private_handlers
 from handlers.group import setup_group_handlers
 
-TOKEN = os.getenv("BOT_TOKEN")
-WEBHOOK_URL = os.getenv("WEBHOOK_URL")
+TOKEN = "8189855146:AAH9h7RfWawHqC3ytacP361WjfcA5KN4g3Y"
+WEBHOOK_URL = "https://bottelegram-production-da62.up.railway.app"
 
 if not TOKEN or not WEBHOOK_URL:
     raise ValueError("Faltan las variables de entorno BOT_TOKEN o WEBHOOK_URL")
