@@ -22,8 +22,10 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
             [InlineKeyboardButton("👀 Just exploring", callback_data="explorando")]
         ]
     markup = InlineKeyboardMarkup(buttons)
-    await update.message.reply_text(f"¡Hola {user.first_name}!
-{question}", reply_markup=markup)
+    await update.message.reply_text(f"¡Hola {user.first_name}!\n{question}", reply_markup=markup)
+
+
+
 
 async def handle_response(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
