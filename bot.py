@@ -3,12 +3,16 @@ from telegram.ext import ApplicationBuilder
 from handlers.private import setup_private_handlers
 from handlers.group import setup_group_handlers
 
-TOKEN = "8189855146:AAH9h7RfWawHqC3ytacP361WjfcA5KN4g3Y"
+TOKEN = os.getenv("BOT_TOKEN")
+WEBHOOK_URL = os.getenv("WEBHOOK_URL")
 
 app = ApplicationBuilder().token(TOKEN).build()
-
 setup_private_handlers(app)
 setup_group_handlers(app)
 
-print("🤖 Bot iniciado correctamente")
-app.run_polling()
+if __name__ == "__main__":
+    app.run_webhook(
+        listen="0.0.0.0",
+        port=int(os.environ.get("PORT", 8080)),
+        webhook_url=WEBHOOK_URL
+    )
