@@ -10,10 +10,10 @@ async def welcome(update: Update, context: ContextTypes.DEFAULT_TYPE):
             data={"chat_id": update.effective_chat.id, "user_id": member.id, "username": member.username}
         )
         await update.message.reply_text(
-            f"¡Bienvenido {member.full_name}! Tienes 5 horas para subir un archivo STL o serás eliminado.
-"
-            f"Welcome {member.full_name}! You have 5 hours to upload an STL file or you'll be removed."
-        )
+    f"¡Bienvenido {member.full_name}! Tienes 5 horas para subir un archivo STL o serás eliminado.\n"
+    f"Welcome {member.full_name}! You have 5 hours to upload an STL file or you'll be removed."
+)
+
 
 async def handle_files(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.effective_user.id
